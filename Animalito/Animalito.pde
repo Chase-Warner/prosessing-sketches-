@@ -16,7 +16,7 @@ class map {//class to draw the background, **not essential to know for the game*
     }
     
  }
-void light() { //draws light
+ void light() { //draws light
      float maxDist = dist(width/2,height/2,0,0);
      
     for (int i = 0; width*height/32  > i; i++) {
@@ -26,9 +26,9 @@ void light() { //draws light
       float tint = (dist(x,y,width/2,height/2) /maxDist )*40 ;//percentage of height
     
      noStroke();
-     //fill(0,0,0,tint);
+//     fill(0,0,0,tint);
 
-     //rect(x,y,32,32);
+  //   rect(x,y,32,32);
     
      
     }
@@ -192,7 +192,7 @@ class character {
     size = size_;
   }
   void view() {
-    sightX = int(norm(energy,25,100)*150); //int(120 - (dist(x,y,width/2,height/2)/(dist(0,0,width/2,height))  * 150) );
+    sightX = int(120 - (dist(x,y,width/2,height/2)/(dist(0,0,width/2,height))  * 150) );
     
     sightY = sightX;
   }
@@ -222,7 +222,7 @@ class character {
   boolean hit(map Map, float x, float y) {
     float[][] walls = Map.walls;
     for (int i = 0; walls.length > i; i++) {
-        if ( abs(x-walls[i][0]) < walls[i][2]/2 && abs(y-walls[i][1]) < walls[i][3]/2) {
+        if ( abs(x-walls[i][0]) < walls[i][2]/2 && abs(y-walls[i][1]) <walls[i][3]/2) {
           return true;
         }
     }
@@ -243,7 +243,7 @@ map b= new map();
 You tst ;
 
 void setup() {
-  size(1000,1000);
+  size(576,576);
   b.INIT();
   tst = new You();
 
