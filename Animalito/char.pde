@@ -1,11 +1,11 @@
-class You {
+class Youaddons {
   float ang;
   int TextMeme = round(random(1, 5));
   character YOU;
-  You () {
+  Youaddons() {
     YOU = new character(width/2, height/2, 10);
   }
-  void run(map MAP) {//Avalible functions, part allowed to change
+  void run2(map MAP) {//Avalible functions, part allowed to change
     this.calc();
     ArrayList<float[]> info = MAP.infoSight(YOU).get(0);
 
@@ -36,7 +36,7 @@ class You {
       stroke(255, 0, 0);
       line(YOU.x, YOU.y, goalx, goaly);
 
-      println(goalx, goaly);
+ //     println(goalx, goaly);
 
       if (ang == -1) {
         strokeWeight(0.5);
@@ -128,6 +128,11 @@ class You {
     ////
     this.calc2(MAP, ang, speed); //mandatory, makes you moves, takes angle of movement, and speed as input
   }
+  void run(map MAP) {
+    run2(MAP);
+    
+  }
+  
 
 
   void calc() {
